@@ -169,6 +169,109 @@
       echo "<br>";
     }
     saySalution();
+
+    // Operators
+    $x = 100;
+    $y = 50;
+
+    echo $x + $y;
+    echo "<br>";
+    echo $x - $y;
+    echo "<br>";
+    echo $x * $y;
+    echo "<br>";
+    echo $x / $y;
+    echo "<br>";
+    echo $x % $y;
+    echo "<br>";
+    echo $x ** $y;
+    echo "<br>";
+
+    // Assignment operators
+    $a = 5;
+    $b = $a;
+    echo $b;
+    echo "<br>";
+    $a += $b;
+    echo $a;
+    echo "<br>";
+    /*
+    a += b is the same as a = a + b
+    a -= b is the same as a = a - b
+    a *= b is the same as a = a * b
+    a /= b is the same as a = a / b
+    a %= b is the same as a = a % b
+    */
+
+    // Comparison operators
+    $x = 1;
+    $y = 2;
+    var_dump($x == $y); #equal
+    echo "<br>";
+    var_dump($x === $y); #identical
+    echo "<br>";
+    var_dump($x != $y); #not equal
+    echo "<br>";
+    var_dump($x <> $y); #not equal
+    echo "<br>";
+    var_dump($x !== $y); #not identical
+    echo "<br>";
+    var_dump($x > $y); #greater than
+    echo "<br>";
+    var_dump($x < $y); #less than
+    echo "<br>";
+    var_dump($x >= $y); #greater than or equal to
+    echo "<br>";
+    var_dump($x <= $y); #less than or equal to
+    echo "<br>";
+    var_dump($x <=> $y); #spaceship
+    echo "<br>";
+
+    // Increment / Decrement operators
+    $a = 3;
+    echo $a;
+    echo "<br>";
+    echo ++$a; #pre-increment
+    echo "<br>";
+    $a = 3;
+    echo $a++; #post-increment
+    echo "<br>";
+    echo $a;
+    echo "<br>";
+    $a = 3;
+    echo $a;
+    echo "<br>";
+    echo --$a; #pre-decrement
+    echo "<br>";
+    $a = 3;
+    echo $a--; #post-decrement
+    echo "<br>";
+    echo $a;
+    echo "<br>";
+
+    // Logical operators
+    /*
+
+    and
+    or
+    xor
+    &&
+    ||
+    !
+
+    */
+
+    // String operators
+    /*
+
+    .   concatenation
+    .=  concatenation assignment
+
+    */
+
+    // Others include:
+    # Array Operators
+    # Conditional assignment operators
   ?>
 
 </body>
