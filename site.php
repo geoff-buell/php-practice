@@ -119,6 +119,56 @@
     $int_cast = (int)$num;
     echo $int_cast;
     echo "<br>";
+
+    // Math
+    echo(pi());
+    echo "<br>";
+
+    echo(min(1, 2, 3, 4, 5));
+    echo "<br>";
+
+    echo(max(1, 2, 3, 4, 5));
+    echo "<br>";
+
+    echo(abs(-6.66));
+    echo "<br>";
+
+    echo(sqrt(144));
+    echo "<br>";
+
+    echo(round(0.6));
+    echo "<br>";
+    echo(round(0.4));
+    echo "<br>";
+
+    echo(rand());
+    echo "<br>";
+
+    echo(rand(1, 10));
+    echo "<br>";
+
+    // Constants
+    define("GREETING", "Hello humanz.");
+    echo GREETING;
+    echo "<br>";
+
+    define("colors", [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "violet"
+    ]);
+    echo colors[0];
+    echo "<br>";
+
+    define("SALUTATION", "Goodbye humanz.");
+    function saySalution() {
+      echo SALUTATION;
+      echo "<br>";
+    }
+    saySalution();
   ?>
 
 </body>
