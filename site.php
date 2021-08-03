@@ -18,7 +18,6 @@
     /* This is a 
     multiple-line comment */
 
-
     // Variables
     $variable = "Start variables with a $. <br>";
     echo $variable;
@@ -62,6 +61,63 @@
 
     $null = null;
     var_dump($null);
+    echo "<br>";
+
+    // Strings
+    echo strlen("Returns the length of the string.");
+    echo "<br>";
+
+    echo str_word_count("Counts the number of words in a string.");
+    echo "<br>";
+
+    echo strrev("Reverses a string.");
+    echo "<br>";
+
+    echo strpos("Where in the world is", "world");
+    echo "<br>";
+
+    echo str_replace("you", "beautiful", "Hello you!");
+    echo "<br>";
+
+    // Numbers
+    $num = 5;
+    var_dump(is_int($num));
+    echo "<br>";
+
+    $num = 6.66;
+    var_dump(is_float($num));
+    echo "<br>";
+
+    $num = 1.9e411;
+    var_dump($num);
+    var_dump(is_infinite($num));
+    var_dump(is_finite($num));
+    echo "<br>";
+
+    $num = acos(8);
+    var_dump($num);
+    var_dump(is_nan($num));
+    echo "<br>";
+
+    $num = 5;
+    var_dump(is_numeric($num));
+    $num = "5";
+    var_dump(is_numeric($num));
+    $num = "5" + 5;
+    var_dump(is_numeric($num));
+    $num = "hello";
+    var_dump(is_numeric($num));
+    echo "<br>";
+
+    // cast float into integer
+    $num = 666.66;
+    $int_cast = (int)$num;
+    echo $int_cast;
+    echo "<br>";
+    // cast string into integer
+    $num = "666.66";
+    $int_cast = (int)$num;
+    echo $int_cast;
     echo "<br>";
   ?>
 
