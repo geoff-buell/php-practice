@@ -9,6 +9,7 @@
 <body>
 
   <?php
+    echo "<h1>This page consists of nonsense.</h1>";
     echo "Hello World! <br>";
 
     // Single line comment
@@ -371,6 +372,39 @@
       }
       echo "The number is $x <br>";
     }
+
+    // functions
+
+    function writeMsg() {
+      echo "Message in a bottle. <br>";
+    }
+    writeMsg();
+
+    function familyName($fname) {
+      echo "The family name is $fname <br>";
+    }
+    familyName("Buell");
+    familyName("Wiederhold");
+
+    function nameAge($name, $age) {
+      echo "My name is $name. I am $age years old. <br>";
+    }
+    nameAge("Bob", "59");
+    nameAge("Donna", "68");
+
+    function sum($x, $y) {
+      $z = $x + $y;
+      return $z;
+    }
+    echo sum(5, 5) . "<br>";
+    echo sum(100, 300) . "<br>";
+
+    function addFive(&$value) {
+      $value += 5;
+    }
+    $num = 2;
+    addFive($num);
+    echo "$num <br>";
 
   ?>
 
