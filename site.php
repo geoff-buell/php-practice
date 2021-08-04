@@ -373,8 +373,7 @@
       echo "The number is $x <br>";
     }
 
-    // functions
-
+    // Functions
     function writeMsg() {
       echo "Message in a bottle. <br>";
     }
@@ -406,6 +405,45 @@
     addFive($num);
     echo "$num <br>";
 
+    // Arrays
+    // indexed arrays
+    $cars = array("Volvo", "BMW", "Toyota");
+    echo "I like " . $cars[0] . ", " . $cars[1] . ", " . "and " . $cars[2] . ".<br>";
+    echo count($cars) . "<br>";
+
+    $arrLength = count($cars);
+    for ($i = 0; $i < $arrLength; $i++) {
+      echo $cars[$i] . "<br>";
+    }
+
+    // associative arrays
+    $age = array("Bob"=>"58", "Donna"=>"68", "Maria"=>"50");
+    echo "Maria is " . $age['Maria'] . " years old. <br>";
+
+    foreach($age as $i => $i_value) {
+      echo "Key=" . $i . ", Value=" . $i_value;
+      echo "<br>";
+    }
+
+    // multidimensional arrays
+    $cars = array(
+      array("Volvo", 18, 22),
+      array("BMW", 25, 10),
+      array("Toyota", 40, 90)
+    );
+
+    echo $cars[0][0] . ": In stock: " . $cars[0][1] . ", Sold: " . $cars[0][2] . "<br>";
+    
+    // Sorting arrays
+    # Example: sort($cars);
+
+    # sort() - ascending
+    # rsort() - descending
+    # asort() - ascending, according to value
+    # ksort() - ascending, according to key
+    # arsort() - descending, according to value
+    # krsort() - descending, according to key
+     
   ?>
 
 </body>
