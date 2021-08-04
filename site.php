@@ -444,6 +444,40 @@
     # arsort() - descending, according to value
     # krsort() - descending, according to key
      
+    // Superglobals
+    echo $_SERVER['PHP_SELF'];
+    echo "<br>";
+    echo $_SERVER['SERVER_NAME'];
+    echo "<br>";
+    echo $_SERVER['HTTP_HOST'];
+    echo "<br>";
+    // echo $_SERVER['HTTP_REFERER'];
+    // echo "<br>";
+    echo $_SERVER['HTTP_USER_AGENT'];
+    echo "<br>";
+    echo $_SERVER['SCRIPT_NAME'];
+    echo "<br>";
+
+    // Regex 
+    $str = "Hello world!";
+    $regex = "/world/i";
+    echo preg_match($regex, $str);
+    echo "<br>";
+
+    $str = "The rain in SPAIN falls mainly on the plains.";
+    $regex = "/ain/i";
+    echo preg_match_all($regex, $str);
+    echo "<br>";
+
+    $str = "I am hungry.";
+    $regex = "/hungry/i";
+    echo preg_replace($regex, "full", $str);
+    echo "<br>";
+
+    $str = "Apples and bananas";
+    $regex = "/ba(na){2}/i";
+    echo preg_match($regex, $str);
+    echo "<br>";
   ?>
 
 </body>
