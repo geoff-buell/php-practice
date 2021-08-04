@@ -304,7 +304,6 @@
     echo "<br>";
 
     // Switch statement
-
     $favColor = "green";
 
     switch ($favColor) {
@@ -319,6 +318,58 @@
         break;
       default:
         echo "Your favorite color is not RGB.";
+    }
+
+    echo "<br>";
+
+    // Loops
+
+    // while loop
+    $x = 1;
+    while ($x <= 5) {
+      echo "The number is $x <br>";
+      $x++;
+    }
+
+    // do...while loop
+    $x = 6;
+    do {
+      echo "The number is $x <br>";
+      $x++;
+    } while ($x <= 5);
+
+    // for loop
+    for ($x = 1; $x <= 6; $x++) {
+      echo "The number is $x <br>";
+    }
+
+    // foreeach loop
+    $colors = array("red", "blue", "green");
+
+    foreach ($colors as $value) {
+      echo "$value <br>";
+    }
+
+    $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+    foreach ($age as $person => $value) {
+      echo "$person is $value <br>";
+    }
+
+    // break
+    for ($x = 0; $x < 10; $x++) {
+      if ($x == 4) {
+        break;
+      }
+      echo "The number is $x <br>";
+    }
+
+    // continue
+    for ($x = 0; $x < 10; $x++) {
+      if ($x == 4) {
+        continue;
+      }
+      echo "The number is $x <br>";
     }
 
   ?>
