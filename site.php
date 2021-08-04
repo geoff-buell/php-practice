@@ -272,6 +272,55 @@
     // Others include:
     # Array Operators
     # Conditional assignment operators
+
+    // If statement
+    $num = 10;
+    if ($num < 11) {
+      echo "Have a great day!";
+    }
+
+    echo "<br>";
+
+    // If...else statement
+    $bool = false;
+    if ($bool) {
+      echo "I knew it was true";
+    } else {
+      echo "I knew it was false";
+    }
+
+    echo "<br>";
+
+    // If...elseif...else statement
+    $time = date("H");
+    if ($time < "10") {
+      echo "Have a good morning!";
+    } elseif ($time < "20") {
+      echo "Have a great day!";
+    } else {
+      echo "Have a good night!";
+    }
+
+    echo "<br>";
+
+    // Switch statement
+
+    $favColor = "green";
+
+    switch ($favColor) {
+      case "red":
+        echo "Your favorite color is red!";
+        break;
+      case "blue":
+        echo "Your favorite color is blue";
+        break;
+      case "green":
+        echo "Your favorite color is green!";
+        break;
+      default:
+        echo "Your favorite color is not RGB.";
+    }
+
   ?>
 
 </body>
