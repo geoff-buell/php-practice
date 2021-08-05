@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Handling</title>
+  <style>
+  .error {color: #FF0000;}
+  </style>
 </head>
 <body>
 
@@ -22,11 +25,23 @@
 
   <?php 
 
+    $nameErr = $emailErr = "";
     $name = $email = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $name = test_input($_POST["name"]);
-      $email = test_input($_POST["email"]);
+
+      if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+      } else {
+        $name = test_input($_POST["name"]);
+      }
+
+      if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+      } else {
+        $email = test_input($_POST["email"]);
+      }
+      
     }
 
     function test_input($data) {
@@ -38,10 +53,17 @@
 
   ?>
 
+  <h2>PHP Form Validation Example</h2>
+  <p><span class="error">* required field</span></p>
   <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-    Name: <input type="text" name="name"><br>
-    E-mail: <input type="text" name="email"><br>
+    Name: <input type="text" name="name">
+    <span class="error">* <?php echo $nameErr;?></span>
+    <br><br>
+    E-mail: <input type="text" name="email">
+    <span class="error">* <?php echo $emailErr;?></span>
+    <br><br>
     <input type="submit">
+    <br><br>
   </form>
   
   Welcome: <?php echo $_POST["name"]; ?><br>
