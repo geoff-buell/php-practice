@@ -63,19 +63,21 @@
 
   <h2>PHP Form Validation Example</h2>
   <p><span class="error">* required field</span></p>
-  <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-    Name: <input type="text" name="name">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    Name: <input type="text" name="name" value="<?php echo $name ?>">
     <span class="error">* <?php echo $nameErr;?></span>
     <br><br>
-    E-mail: <input type="text" name="email">
+    E-mail: <input type="text" name="email" value="<?php echo $email ?>">
     <span class="error">* <?php echo $emailErr;?></span>
     <br><br>
     <input type="submit">
     <br><br>
   </form>
   
-  Welcome: <?php echo $_POST["name"]; ?><br>
-  Your email address is: <?php echo $_POST["email"]; ?><br>
+  <?php 
+    echo "Welcome: " . $name . "<br>";
+    echo "Your email address is: " . $email . "<br>";
+  ?>
 
 </body>
 </html>
