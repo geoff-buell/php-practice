@@ -53,5 +53,13 @@
 
   ?>
 
+    <!-- Include and Require -->
+    <!-- require will produce a fatal error (E_COMPILE_ERROR) and stop the script -->
+    <!-- include will only produce a warning (E_WARNING) and the script will continue -->
+    <h1>This is a header.</h1>
+    <p>This is some text.</p>
+    <p>This is more text.</p>
+    <?php include 'footer.php';?>
+
 </body>
 </html>
