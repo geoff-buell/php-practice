@@ -156,5 +156,47 @@
     // session_destroy();
   ?>
 
+  <?php
+    $str = "<h1>Hello world!</h1>";
+    echo $str . "<br>";
+    $newStr = filter_var($str, FILTER_SANITIZE_STRING);
+    echo $newStr . "<br>";
+
+    $int = 100;
+    if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+      echo "Integer is valid <br>"; 
+    } else {
+      echo "Integer is invalid <br>";
+    }
+
+    $int = 0;
+    if (filter_var($int, FILTER_VALIDATE_INT) === 0 || !filter_var($int, FILTER_VALIDATE_INT) === false) {
+      echo "Integer is valid. <br>";
+    } else {
+      echo "Integer is invalid. <br>";
+    }
+
+    $ip = "127.0.0.1";
+    if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+      echo "$ip is a valid ip address. <br>";
+    } else {
+      echo "$ip is an invalid ip address. <br>";
+    }
+
+    $email = "john.doe@example.com";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+      echo "$email is valid email address. <br>";
+    } else {
+      echo "$email is an invalid address. <br>";
+    }
+
+    $url = "https://www.example.com";
+    if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+      echo "$url is a valid url. <br>";
+    } else {
+      echo "$url is an invalid url. <br>";
+    }
+  ?>
+
 </body>
 </html>
