@@ -53,13 +53,43 @@
 
   ?>
 
-    <!-- Include and Require -->
-    <!-- require will produce a fatal error (E_COMPILE_ERROR) and stop the script -->
-    <!-- include will only produce a warning (E_WARNING) and the script will continue -->
-    <h1>This is a header.</h1>
-    <p>This is some text.</p>
-    <p>This is more text.</p>
-    <?php include 'footer.php';?>
+  <!-- Include and Require -->
+  <!-- require will produce a fatal error (E_COMPILE_ERROR) and stop the script -->
+  <!-- include will only produce a warning (E_WARNING) and the script will continue -->
+  <h1>This is a header.</h1>
+  <p>This is some text.</p>
+  <p>This is more text.</p>
+  <?php include 'footer.php';?>
+
+  <?php 
+
+    // reads file and closes file
+    $myFile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    echo fread($myFile, filesize("webdictionary.txt"));
+    fclose($myFile);
+
+    echo "<br>";
+    // reads first line of file and close file
+    $myFile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    echo fgets($myFile);
+    fclose($myFile);
+
+    echo "<br>";
+    // Output one line until end-of-file and close file
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    while(!feof($myfile)) {
+      echo fgets($myfile) . "<br>";
+    }
+    fclose($myfile);
+
+    // Output one character until end-of-file
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    while(!feof($myfile)) {
+      echo fgetc($myfile);
+    }
+    fclose($myfile);
+    
+  ?>
 
 </body>
 </html>
