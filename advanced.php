@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <?php
-$cookie_name = "user";
-$cookie_value = "John Doe";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+  session_start();
 ?>
 <?php
-// modify by setting cookie again
-$cookie_name = "user";
-$cookie_value = "Alex Porter";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-// delete by setting cookie expiration date in the past
+  $cookie_name = "user";
+  $cookie_value = "John Doe";
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+<?php
+  // modify by setting cookie again
+  $cookie_name = "user";
+  $cookie_value = "Alex Porter";
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+  // delete by setting cookie expiration date in the past
 ?>
 <html lang="en">
 <head>
@@ -137,6 +140,20 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     } else {
       echo "Cookies are disabled.";
     }
+  ?>
+
+  <?php
+    $_SESSION["favColor"] = "green";
+    $_SESSION["favAnimal"] = "cat";
+    echo "The sessions variables are set.";
+
+    // overwrite session variable
+    $_SESSION["favColor"] = "blue";
+
+    // remove session variables
+    // session_unset();
+    // destroy the session
+    // session_destroy();
   ?>
 
 </body>
