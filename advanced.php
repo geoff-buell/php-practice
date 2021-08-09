@@ -76,19 +76,34 @@
 
     echo "<br>";
     // Output one line until end-of-file and close file
-    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
-    while(!feof($myfile)) {
-      echo fgets($myfile) . "<br>";
+    $myFile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    while(!feof($myFile)) {
+      echo fgets($myFile) . "<br>";
     }
-    fclose($myfile);
+    fclose($myFile);
 
     // Output one character until end-of-file
-    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
-    while(!feof($myfile)) {
-      echo fgetc($myfile);
+    $myFile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    while(!feof($myFile)) {
+      echo fgetc($myFile);
     }
-    fclose($myfile);
-    
+    fclose($myFile);
+
+    // Create new file and write file
+    $myFile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "John Doe\n";
+    fwrite($myFile, $txt);
+    $txt = "Jane Doe\n";
+    fwrite($myFile, $txt);
+    fclose($myFile);
+
+    // Open file, overwrite file, and close file
+    $myFile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "Mickey Mouse\n";
+    fwrite($myFile, $txt);
+    $txt = "Minnie Mouse\n";
+    fwrite($myFile, $txt);
+    fclose($myFile);
   ?>
 
 </body>
