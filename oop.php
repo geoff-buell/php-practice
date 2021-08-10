@@ -98,8 +98,8 @@
 
     $tabby = new Cat();
     $tabby->name = "Hissy Eliot"; // ok
-    $tabby->color = "Mostly brown and gray"; // error
-    $tabby->weight = "13 lbs"; // error
+    // $tabby->color = "Mostly brown and gray"; // error
+    // $tabby->weight = "13 lbs"; // error
   ?>
 
   <?php
@@ -111,19 +111,41 @@
       function set_name($name) {
         $this->name = $name;
       }
-      protected function set_color($color) {
-        $this->color = $color;
-      }
-      private function set_weight($weight) {
-        $this->weight = $weight;
-      }
+      // protected function set_color($color) {
+      //   $this->color = $color;
+      // }
+      // private function set_weight($weight) {
+      //   $this->weight = $weight;
+      // }
     }
 
     $mutt = new Dog();
     $mutt->set_name("Jared"); // ok
-    $mutt->set_color("brown"); // error
-    $mutt->set_weight("20 lbs"); // error
+    // $mutt->set_color("brown"); // error
+    // $mutt->set_weight("20 lbs"); // error
   ?>
 
+  <?php
+    class Berry {
+      public $name;
+      public $color;
+      public function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+      }
+      public function intro() {
+        echo "This fruit is a {$this->name} and the color is {$this->color}. <br>";
+      }
+    }
+
+    class Strawberry extends Berry {
+      public function message() {
+        echo "Am I a fruit or a berry? <br>";
+      }
+    }
+    $strawberry = new Strawberry("strawberry", "red");
+    $strawberry->message();
+    $strawberry->intro();
+  ?>
 </body>
 </html>
