@@ -89,5 +89,41 @@
     $broccoli = new Vegetable("broccoli", "green");
   ?>
 
+  <?php
+    class Cat {
+      public $name;
+      protected $color;
+      private $weight;
+    }
+
+    $tabby = new Cat();
+    $tabby->name = "Hissy Eliot"; // ok
+    $tabby->color = "Mostly brown and gray"; // error
+    $tabby->weight = "13 lbs"; // error
+  ?>
+
+  <?php
+    class Dog {
+      public $name;
+      public $color;
+      public $weight;
+
+      function set_name($name) {
+        $this->name = $name;
+      }
+      protected function set_color($color) {
+        $this->color = $color;
+      }
+      private function set_weight($weight) {
+        $this->weight = $weight;
+      }
+    }
+
+    $mutt = new Dog();
+    $mutt->set_name("Jared"); // ok
+    $mutt->set_color("brown"); // error
+    $mutt->set_weight("20 lbs"); // error
+  ?>
+
 </body>
 </html>
