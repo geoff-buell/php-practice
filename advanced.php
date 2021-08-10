@@ -253,6 +253,42 @@
 
     printFormatted("Hello World", "exclaim");
     printFormatted("Hello World", "ask");
+
+    //JSON
+    $age = array("Peter"=>35, "Paul"=>32, "Mary"=>28);
+    echo json_encode($age);
+    echo "<br>";
+
+    $cars = array("Volvo", "Toyota", "BMW");
+    echo json_encode($cars);
+    echo "<br>";
+
+    $jsonObj = '{"Peter":35,"Paul":32,"Mary":28}';
+    var_dump(json_decode($jsonObj));
+    echo "<br>";
+
+    var_dump(json_decode($jsonObj, true));
+    echo "<br>";
+
+    $obj = json_decode($jsonObj);
+
+    echo $obj->Peter . "<br>";
+    echo $obj->Paul . "<br>";
+    echo $obj->Mary . "<br>";
+
+    $arr = json_decode($jsonObj, true);
+
+    echo $arr["Peter"] . "<br>";
+    echo $arr["Paul"] . "<br>";
+    echo $arr["Mary"] . "<br>";
+
+    foreach($obj as $key => $value) {
+      echo $key . " => " . $value . "<br>";
+    }
+
+    foreach($arr as $key => $value) {
+      echo $key . " => " . $value . "<br>";
+    }
   ?>
 
 </body>
