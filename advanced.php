@@ -225,7 +225,34 @@
     $newStr = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
     echo "$newStr <br>";
 
-    
+    function my_callback($item) {
+      return strlen($item);
+    }
+    $strings = ["apple", "orange", "banana", "coconut"];
+    $lengths = array_map("my_callback", $strings);
+    print_r($lengths);
+    echo "<br>";
+
+    // same thing just as an anonymous function
+    $otherStrings = ["kiwi", "peach", "watermelon", "grapes"];
+    $stringLengths = array_map( function($item) { return strlen($item); }, $otherStrings);
+    print_r($stringLengths);
+    echo "<br>";
+
+    function exclaim($str) {
+      return $str . "! <br>";
+    }
+
+    function ask($str) {
+      return $str . "? <br>";
+    }
+
+    function printFormatted($str, $format) {
+      echo $format($str);
+    }
+
+    printFormatted("Hello World", "exclaim");
+    printFormatted("Hello World", "ask");
   ?>
 
 </body>
