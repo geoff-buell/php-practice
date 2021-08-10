@@ -147,5 +147,22 @@
     $strawberry->message();
     $strawberry->intro();
   ?>
+
+  <?php
+    class Hello {
+      const WELCOME_MESSAGE = "Hello there, welcome! <br>";
+    }
+    echo Hello::WELCOME_MESSAGE;
+
+    class Goodbye {
+      const LEAVING_MESSAGE = "Bye, y'all come back now ya hear? <br";
+      public function byebye() {
+        echo self::LEAVING_MESSAGE;
+      }
+    }
+
+    $goodbye = new Goodbye();
+    $goodbye->byebye();
+  ?>
 </body>
 </html>
