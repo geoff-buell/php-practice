@@ -47,8 +47,29 @@
     echo "Color: " . $banana->get_color() . "<br>";
 
     var_dump($banana instanceof Fruit);
-    echo "<br>";
-    
+    echo "<br><br>";
+  ?>
+  <!-- Same thing using the constuct function  -->
+  <?php
+    class DifferentFruit {
+      public $name;
+      public $color;
+
+      function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+      }
+      function get_name() {
+        return $this->name;
+      }
+      function get_color() {
+        return $this->color;
+      }
+    }
+
+    $apple = new DifferentFruit("Apple", "Red");
+    echo $apple->get_name() . "<br>";
+    echo $apple->get_color() . "<br>";  
   ?>
 
 </body>
