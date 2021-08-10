@@ -72,5 +72,22 @@
     echo $apple->get_color() . "<br>";  
   ?>
 
+  <?php
+    class Vegetable {
+      public $name;
+      public $color;
+
+      function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+      }
+      function __destruct() {
+        echo "The vegetable is {$this->name} and the color is {$this->color}. <br>";
+      }
+    }
+
+    $broccoli = new Vegetable("broccoli", "green");
+  ?>
+
 </body>
 </html>
