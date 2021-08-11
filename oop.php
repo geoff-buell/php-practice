@@ -1,3 +1,17 @@
+<?php
+  namespace Html;
+  class Table {
+    public $title = "";
+    public $numRows = 0;
+    public function message() {
+      echo "<p>Table '{$this->title}' has {$this->numRows} rows.</p>";
+    }
+  }
+  $table = new Table();
+  $table->title = "My table";
+  $table->numRows = 5;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -368,6 +382,11 @@
     $x = new x();
     echo $x->xStatic();
     echo "<br>";
+  ?>
+
+  <?php 
+    // namespace and class defined at top of file 
+    $table->message();
   ?>
 </body>
 </html>
