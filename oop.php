@@ -1,15 +1,15 @@
 <?php
-  namespace Html;
-  class Table {
-    public $title = "";
-    public $numRows = 0;
-    public function message() {
-      echo "<p>Table '{$this->title}' has {$this->numRows} rows.</p>";
-    }
-  }
-  $table = new Table();
-  $table->title = "My table";
-  $table->numRows = 5;
+  // namespace Html;
+  // class Table {
+  //   public $title = "";
+  //   public $numRows = 0;
+  //   public function message() {
+  //     echo "<p>Table '{$this->title}' has {$this->numRows} rows.</p>";
+  //   }
+  // }
+  // $table = new Table();
+  // $table->title = "My table";
+  // $table->numRows = 5;
 ?>
 
 <!DOCTYPE html>
@@ -386,7 +386,64 @@
 
   <?php 
     // namespace and class defined at top of file 
-    $table->message();
+    // $table->message();
+  ?>
+
+  <?php
+    function printIterable(iterable $myIterable) {
+      foreach($myIterable as $item) {
+        echo $item;
+      }
+    }
+    
+    $arr = ["a", "b", "c"];
+    printIterable($arr);
+
+    echo "<br>";
+
+    function getIterable():iterable {
+      return ["a", "b", "c"];
+    }
+
+    $myIterable = getIterable();
+    foreach($myIterable as $item) {
+      echo $item;
+    }
+
+    echo "<br>";
+
+    class MyIterator implements Iterator {
+      private $items = [];
+      private $pointer = 0;
+
+      public function __construct($items) {
+        $this->items = array_values($items);
+      }
+      public function current() {
+        return $this->items[$this->pointer];
+      }
+      public function key() {
+        return $this->pointer;
+      }
+      public function next() {
+        $this->pointer++;
+      }
+      public function rewind() {
+        $this->pointer = 0;
+      }
+      public function valid() {
+        return $this->pointer < count($this->items);
+      }
+    }
+
+    // function printIterable(iterable $myIterable) {
+    //   foreach($myIterable as $item) {
+    //     echo $item;
+    //   }
+    // }
+
+    $iterator = new MyIterator(["a", "b", "c"]);
+    printIterable($iterator);
   ?>
 </body>
 </html>
