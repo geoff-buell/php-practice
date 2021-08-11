@@ -334,5 +334,40 @@
     echo $domainW3->websiteName;
     echo "<br>";
   ?>
+
+  <?php
+    // class Pi {
+    //   public static $value = 3.14159;
+    // }
+
+    // echo Pi::$value;
+
+    // class Pi {
+    //   public static $value = 3.14159;
+    //   public function staticValue() {
+    //     return self::$value;
+    //   }
+    // }
+
+    // $pi = new Pi();
+    // echo $pi->staticValue();
+
+    class Pi {
+      public static $value = 3.14159;
+    }
+
+    class x extends Pi {
+      public function xStatic() {
+        return parent::$value;
+      }
+    }
+
+    echo x::$value;
+    echo "<br>";
+
+    $x = new x();
+    echo $x->xStatic();
+    echo "<br>";
+  ?>
 </body>
 </html>
