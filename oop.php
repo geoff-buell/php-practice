@@ -228,5 +228,38 @@
     echo $class->prefixName("Jane Doe");
     echo "<br>";
   ?>
+
+  <?php
+    interface Animal {
+      public function makeSound();
+    }
+
+    class Kitty implements Animal {
+      public function makeSound() {
+        echo "Meow <br>";
+      }
+    }
+
+    class Doggy implements Animal {
+      public function makeSound() {
+        echo "Woof <br>";
+      }
+    }
+
+    class Mouse implements Animal {
+      public function makeSound() {
+        echo "Squeak <br>";
+      }
+    }
+
+    $kitty = new Kitty();
+    $doggy = new Doggy();
+    $mouse = new Mouse();
+    $animals = array($kitty, $doggy, $mouse);
+
+    foreach($animals as $animal) {
+      $animal->makeSound();
+    }
+  ?>
 </body>
 </html>
