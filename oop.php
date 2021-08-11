@@ -290,5 +290,49 @@
     $obj2->msg2();
     echo "<br>";
   ?>
+
+  <?php 
+    class Greeting {
+      public static function welcome() {
+        echo "Hello world! <br>";
+      }
+    }
+
+    Greeting::welcome();
+
+    class Greeting2 {
+      public static function welcome2() {
+        echo "Hey! How are you? <br>";
+      }
+      public function __construct() {
+        self::welcome2();
+      }
+    }
+
+    new Greeting2();
+
+    class SomeOtherClass {
+      public function message() {
+        Greeting::welcome();
+      }
+    }
+
+    class Domain {
+      protected static function getWebsiteName() {
+        return "W3Schoools.com";
+      }
+    }
+
+    class DomainW3 extends Domain {
+      public $websiteName;
+      public function __construct() {
+        $this->websiteName = parent::getWebsiteName();
+      }
+    }
+
+    $domainW3 = new DomainW3();
+    echo $domainW3->websiteName;
+    echo "<br>";
+  ?>
 </body>
 </html>
